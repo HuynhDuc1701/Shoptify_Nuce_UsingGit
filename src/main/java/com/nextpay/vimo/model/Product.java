@@ -1,9 +1,12 @@
 package com.nextpay.vimo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,4 +39,7 @@ public class Product {
     private int saleOff;
 
     private Date createdDate;
+
+    @ManyToOne
+    private Category category;
 }

@@ -1,10 +1,11 @@
 package com.nextpay.vimo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.nextpay.vimo.model.auth.User;
+import lombok.Data;
 
+import javax.persistence.*;
+
+@Data
 @Entity
 public class CustomerInfo {
     @Id
@@ -18,4 +19,6 @@ public class CustomerInfo {
     private String phoneNumber;
 
     private String email;
+    @ManyToOne
+    private User user;
 }

@@ -1,15 +1,21 @@
 package com.nextpay.vimo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Data;
+
+import javax.persistence.*;
 
 @Entity
+@Data
 public class OrdersDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private int amount;
+
+    @ManyToOne
+    private Product product;
+
+    @ManyToOne
+    private Orders orders;
 }

@@ -1,12 +1,13 @@
 package com.nextpay.vimo.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.nextpay.vimo.model.auth.User;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Data
 public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +18,7 @@ public class Notification {
     private boolean status;
 
     private Date createDate;
+
+    @ManyToOne
+    private User user;
 }

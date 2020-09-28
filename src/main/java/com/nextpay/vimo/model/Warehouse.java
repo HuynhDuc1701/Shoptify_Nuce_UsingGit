@@ -1,8 +1,11 @@
 package com.nextpay.vimo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Warehouse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,4 +16,5 @@ public class Warehouse {
 
     @Column(nullable = false)
     private String address;
+
 }
