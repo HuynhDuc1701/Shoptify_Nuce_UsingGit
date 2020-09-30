@@ -1,9 +1,6 @@
 package com.nextpay.vimo.controller;
 
-
-import com.nextpay.vimo.model.Category;
 import com.nextpay.vimo.model.Notification;
-import com.nextpay.vimo.service.impl.CategoryServiceImpl;
 import com.nextpay.vimo.service.impl.NotificationServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +11,7 @@ import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/notification")
 public class NotificationController {
 
     @Autowired
