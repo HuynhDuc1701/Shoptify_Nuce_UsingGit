@@ -24,7 +24,9 @@ public class CustomerInfoController {
     @GetMapping("/{id}")
     public ResponseEntity<CustomerInfo> getCustomerInfo(@PathVariable Long id) {
         Optional<CustomerInfo> customerInfoOptional = customerInfoService.findById(id);
+
         return customerInfoOptional.map(customerInfo -> new ResponseEntity<>(customerInfo, HttpStatus.CREATED)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+
     }
 
     @PostMapping
