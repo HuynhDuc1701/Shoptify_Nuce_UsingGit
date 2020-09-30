@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class ItemService implements IItemService {
+public class ItemServiceImpl implements IItemService {
     @Autowired
     private IItemRepository repository;
 
